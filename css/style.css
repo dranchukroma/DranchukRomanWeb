@@ -163,7 +163,7 @@ a{
     text-align: left;
     z-index: 1;
     opacity: 0;
-    /* height: 230px; */
+    margin-bottom: 40px;
 }
 .text-header{
     font-weight: 500;
@@ -597,7 +597,8 @@ a{
     }
     /* Header */
     .block-header{
-        padding: 14.5px;
+        padding: 25px;
+        margin-bottom: 60px;
     }
     .message-to-scroll{
         margin-left: 124px;
@@ -804,7 +805,7 @@ a{
         width: 462px;
     }
     .h1{
-        font-size: 56px;
+        font-size: 55px;
     }
     .h2{
         font-size: 44px;

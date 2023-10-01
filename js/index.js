@@ -104,11 +104,10 @@ function Language(){
         $('.button-navigation[data-scroll="#h3-contact"]').text('Contact');
         $('#js-name-header').text('Roman Dranchuk');
         $('#js-frontEnd-header ').text('Front-End developer');
-        $('#js-webDesigner-header ').text('Web-designer');
         $('#h3-about').text('About');
         $('#h3-about').css('margin-right', '30px');
-        $('#js-text-about').html('<p><b>Hi, I`m Roman Dranchuk</b><br>based in Warsaw. Creating<br>web-sites is my passion<br>and I`m trying to change<br>my passion into work.<br>Check my finished projects<br>and skills, contact myself,<br>if you want to work with me!</p>');
-        $('#h3-works').text('Works');
+        $('#js-text-about').html('<p>As a dedicated Frontend Developer based in Ukraine, I\'m on a continuous journey of learning and creating. Coding isn\'t just my profession, it\'s my passion. Join me on this exciting web development adventure! <br><b>Let\'s build the web together!</b></p>');
+        $('#h3-works').text('Projects');
         $('.h4-hidden-block').text('Used:');
         $('#name-of-project-1').text('Name of project');
         $('#name-of-project-2').text('Name of project');
@@ -132,7 +131,6 @@ function Language(){
         $('#h3-contact').text('Contact');
         $('#js-name-contact').text('Roman Dranchuk');
         $('#js-frontEnd-contact ').text('Front-End developer');
-        $('#js-webDesigner-contact ').text('Web-designer');
         $('.button-text').text('Send e-mail');
     });
     $('#js-lang-UA').click(function(){
@@ -145,11 +143,10 @@ function Language(){
         $('.button-navigation[data-scroll="#h3-contact"]').text('Контакт');
         $('#js-name-header').text('Роман Дранчук');
         $('#js-frontEnd-header ').text('Front-End розробник');
-        $('#js-webDesigner-header ').text('Веб-дизайнер');
         $('#h3-about').text('Про мене');
         $('#h3-about').css('margin-right', '65px');
-        $('#js-text-about').html('<p><b>Привіт, я Роман Дранчук</b><br>живу у Варшаві. Створення<br>веб-сайтів це моє хоббі<br>тому я хочу зробити<br>хоббі моєю роботою<br>Дивись мої готові проекти <br>і навички, якщо хочеш почати <br>працювати, сконтактуйся зі мною!<p>');
-        $('#h3-works').text('Роботи');
+        $('#js-text-about').html('<p>Відданий Frontend розробник із України. Моя мета - навчатися та творити. Програмування це не лише професія, а й моє захоплення. Приєднуйтесь до мене у цій захоплюючій подорожі розробки веб-сайтів!<br><b>Давайте будувати інтернет разом!</b></p>');
+        $('#h3-works').text('Проекти');
         $('.h4-hidden-block').text('Використані технології:');
         $('#name-of-project-1').text('Назва роботи');
         $('#name-of-project-2').text('Назва роботи');
@@ -173,7 +170,6 @@ function Language(){
         $('#h3-contact').text('Контакт');
         $('#js-name-contact').text('Роман Дранчук');
         $('#js-frontEnd-contact ').text('Front-End розробник');
-        $('#js-webDesigner-contact ').text('Веб-дизайнер');
         $('.button-text').text('Надіслати e-mail');
     });
 }
