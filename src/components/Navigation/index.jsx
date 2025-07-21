@@ -28,13 +28,7 @@ function Navigation() {
     const Sections = (
         <EntryPointsWrapper>
             {sections.map((section) => (
-                <EntryPoints
-                    key={section}
-                    onClick={() => {
-                        document.getElementById(section)?.scrollIntoView({ behavior: "smooth" });
-                        setMobileNav(false); // закриваємо мобільне меню після кліку
-                    }}
-                >
+                <EntryPoints key={section}>
                     {section}
                 </EntryPoints>
             ))}
