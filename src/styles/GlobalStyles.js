@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, h3, h4, h5, h6, p, li {
-    font-family: ${({ theme }) => theme.fontFamily.main};
+    font-family: ${theme.fontFamily.main};
   }
 
   .gradient-bg {

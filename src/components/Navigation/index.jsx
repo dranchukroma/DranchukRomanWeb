@@ -12,12 +12,13 @@ import {
 } from './Navigation.styled';
 import PageIcon from "../icons/PageIcon";
 import Container from '../Container';
+import { useScroll } from "../../context/ScrollContext";
 
-function Navigation({ activeSection, setActiveSection, sectionIds }) {
+function Navigation() {
     const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
     const [mobileNavStatus, setMobileNav] = useState(false);
 
-    console.log(sectionIds)
+    const { sectionIds, activeSection, scrollTo } = useScroll();
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth > 576);
@@ -27,9 +28,13 @@ function Navigation({ activeSection, setActiveSection, sectionIds }) {
 
     const Sections = (
         <EntryPointsWrapper>
-            {sectionIds.slice(1).map((section) => (
-                <EntryPoints  key={section} active={activeSection === section}>
-                    <a href={`#${section}`}>{section}</a>
+            {sectionIds.slice(1).map((sectionId) => (
+                <EntryPoints
+                    key={sectionId}
+                    active={activeSection === sectionId}
+                    onClick={() => scrollTo(sectionId)}
+                >
+                    {sectionId}
                 </EntryPoints>
             ))}
         </EntryPointsWrapper>
@@ -40,7 +45,9 @@ function Navigation({ activeSection, setActiveSection, sectionIds }) {
             <Container>
                 {isDesktop ? (
                     <DesktopNavWrapper>
-                        <PageIcon />
+                        <PageIcon
+                            onClick={() => scrollTo('Header')}
+                        />
                         {Sections}
                     </DesktopNavWrapper>
                 ) : (

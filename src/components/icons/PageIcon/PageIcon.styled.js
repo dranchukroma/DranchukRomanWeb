@@ -10,6 +10,7 @@ export const IconWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     p {    
         font-weight: ${theme.fontWeight.semiBold}

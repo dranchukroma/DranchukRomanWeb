@@ -28,6 +28,7 @@ export const EntryPoints = styled.li`
     padding: 10px;
     border-radius: 15px;
     transition: background-color 0.3s ease;
+    cursor: pointer;
 
     background-color: ${({ active }) => active ? theme.colors.lightWhite : "transparent"};
 
