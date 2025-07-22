@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
 
+export const ProjectWrapper = styled.div`
+
+`
+
 export const ContentWrapper = styled.div`
     padding-top: 50px;
     display: flex;

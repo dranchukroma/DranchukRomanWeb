@@ -1,6 +1,10 @@
 import styled from "styled-components"
 import { theme } from "../../../../styles/theme"
 
+export const ContactWrapper = styled.div`
+
+`
+
 export const ContentWrapper = styled.div`
     padding: 50px 0;
     display: flex;

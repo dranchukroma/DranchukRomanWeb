@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
 
+export const AboutWrapper = styled.div`
+
+`
+
 export const AboutText = styled.p`
     font-size: 25px;
     padding: 50px 0;

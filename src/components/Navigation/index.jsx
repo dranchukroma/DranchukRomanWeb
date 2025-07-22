@@ -13,9 +13,11 @@ import {
 import PageIcon from "../icons/PageIcon";
 import Container from '../Container';
 
-function Navigation() {
+function Navigation({ activeSection, setActiveSection, sectionIds }) {
     const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
     const [mobileNavStatus, setMobileNav] = useState(false);
+
+    console.log(sectionIds)
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth > 576);
@@ -23,13 +25,11 @@ function Navigation() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-    const sections = ["About", "Projects", "Contact"];
-
     const Sections = (
         <EntryPointsWrapper>
-            {sections.map((section) => (
-                <EntryPoints key={section}>
-                    {section}
+            {sectionIds.slice(1).map((section) => (
+                <EntryPoints  key={section} active={activeSection === section}>
+                    <a href={`#${section}`}>{section}</a>
                 </EntryPoints>
             ))}
         </EntryPointsWrapper>
