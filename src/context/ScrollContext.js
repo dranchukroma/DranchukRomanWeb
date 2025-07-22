@@ -1,9 +1,9 @@
-import React, { useState, useContext, useEffect, createContext } from "react";
+import React, { useState, useContext, useEffect, createContext, useMemo } from "react";
 
 const ScrollContext = createContext(null);
 
 export function ScrollProvider({ children }) {
-    const sectionIds = ["Header", "About", "Projects", "Contact"];
+    const sectionIds = useMemo(() => ["Header", "About", "Projects", "Contact"], []);
     const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
     useEffect(() => {
@@ -21,7 +21,7 @@ export function ScrollProvider({ children }) {
         window.addEventListener('scroll', getActiveSection);
         getActiveSection();
         return () => window.removeEventListener('scroll', getActiveSection);
-    }, [activeSection]);
+    }, [sectionIds]);
 
     const scrollTo = (id) => {
         const element = document.getElementById(id);

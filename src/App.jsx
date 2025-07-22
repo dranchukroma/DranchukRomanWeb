@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Routes, Route, BrowserRouter } from 'react-router-dom';
 import './styles/reset.css';
 import { ThemeProvider } from "styled-components";
@@ -10,6 +10,7 @@ import NotFound from "./views/NotFound"
 import SportApp from "./views/Projects/SportApp";
 import Navigation from "./components/Navigation";
 import { ScrollProvider } from "./context/ScrollContext";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
+          <Footer />
         </BrowserRouter>
       </ScrollProvider>
     </ThemeProvider>
