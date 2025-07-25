@@ -11,23 +11,26 @@ import SportApp from "./views/Projects/SportApp";
 import Navigation from "./components/Navigation";
 import { ScrollProvider } from "./context/ScrollContext";
 import Footer from "./components/Footer";
+import { ColorProvider } from "./context/ColorContext";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <BrowserRouter>
-        <ScrollProvider>
-          <Navigation />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/project/:projectName" element={<Projects />}>
-              <Route path="sportApp" element={<SportApp />} />
-            </Route>
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <Footer />
-        </ScrollProvider>
+        <ColorProvider>
+          <ScrollProvider>
+            <Navigation />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/project/:projectName" element={<Projects />}>
+                <Route path="sportApp" element={<SportApp />} />
+              </Route>
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <Footer />
+          </ScrollProvider>
+        </ColorProvider>
       </BrowserRouter>
     </ThemeProvider >
   );

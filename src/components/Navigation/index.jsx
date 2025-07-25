@@ -14,6 +14,7 @@ import {
 import PageIcon from "../icons/PageIcon";
 import Container from '../Container';
 import { useScroll } from "../../context/ScrollContext";
+import AnimatedBackground from '../../components/AnimatedBackground'
 
 function Navigation() {
     const navigate = useNavigate();
@@ -47,29 +48,31 @@ function Navigation() {
     );
 
     return (
-        <NavWrapper className="gradient-bg">
-            <Container>
-                {isDesktop ? (
-                    <DesktopNavWrapper>
-                        <PageIcon
-                            onClick={() => scrollTo('Header')}
-                        />
-                        {Sections}
-                    </DesktopNavWrapper>
-                ) : (
-                    <MobileNavWrapper>
-                        <MobileButtonsWrapper>
-                            <PageIcon />
-                            <BurgerWrapper onClick={() => setMobileNav((prev) => !prev)}>
-                                <BurgerElement active={mobileNavStatus} position='top' />
-                                <BurgerElement active={mobileNavStatus} position='middle' />
-                                <BurgerElement active={mobileNavStatus} position='bottom' />
-                            </BurgerWrapper>
-                        </MobileButtonsWrapper>
-                        <SliderElement open={mobileNavStatus}>{Sections}</SliderElement>
-                    </MobileNavWrapper>
-                )}
-            </Container>
+        <NavWrapper>
+            <AnimatedBackground>
+                <Container>
+                    {isDesktop ? (
+                        <DesktopNavWrapper>
+                            <PageIcon
+                                onClick={() => handleClick('Header')}
+                            />
+                            {Sections}
+                        </DesktopNavWrapper>
+                    ) : (
+                        <MobileNavWrapper>
+                            <MobileButtonsWrapper>
+                                <PageIcon />
+                                <BurgerWrapper onClick={() => setMobileNav((prev) => !prev)}>
+                                    <BurgerElement active={mobileNavStatus} position='top' />
+                                    <BurgerElement active={mobileNavStatus} position='middle' />
+                                    <BurgerElement active={mobileNavStatus} position='bottom' />
+                                </BurgerWrapper>
+                            </MobileButtonsWrapper>
+                            <SliderElement open={mobileNavStatus}>{Sections}</SliderElement>
+                        </MobileNavWrapper>
+                    )}
+                </Container>
+            </AnimatedBackground>
         </NavWrapper>
     );
 }

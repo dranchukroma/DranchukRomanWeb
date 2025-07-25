@@ -54,13 +54,17 @@ export const Position = styled.p`
 export const LinkWrapper = styled.p`
     flex: 1;
 
+    > :first-child{
+        height: 100%;
+        border-radius: 20px;
+    }
+
     @media (max-width: ${theme.breakpoints.tablet}) {
         width: 100%;
     }
 `
 export const ContactLink = styled.a`
     height: 100%;
-    border-radius: 20px;
 
     font-size: 25px;
     font-weight: ${theme.fontWeight.semiBold};

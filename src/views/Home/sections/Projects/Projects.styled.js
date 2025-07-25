@@ -32,6 +32,10 @@ export const CardsContainer = styled.div`
         }
     }}%;
 
+    > :first-child{
+        border-radius: 20px;
+    }
+
     @media (max-width: ${theme.breakpoints.mobile}) {
         width: 100%;
     }
@@ -40,7 +44,6 @@ export const ProjectPreview = styled.div`
     position: relative;
 
     padding: 20px;
-    border-radius: 20px;
 
     display: flex;
     justify-content: space-around;

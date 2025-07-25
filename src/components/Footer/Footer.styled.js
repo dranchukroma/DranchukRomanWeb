@@ -2,7 +2,9 @@ import styled from "styled-components";
 import { theme } from "../../styles/theme";
 
 export const FooterWrapper = styled.footer`
-    padding: 30px 0 10px 0;
+    > :first-child {
+        padding: 10px 0 10px 0;
+    }
 `
 
 export const IconsWrapper = styled.div`

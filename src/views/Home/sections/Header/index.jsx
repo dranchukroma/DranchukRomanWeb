@@ -1,17 +1,20 @@
 import React from "react";
 import Container from "../../../../components/Container";
-import { HeaderWrapper, HeaderCard, FullName, Position} from "./Header.styled";
+import { HeaderWrapper, HeaderCard, FullName, Position } from "./Header.styled";
+import AnimatedBackground from '../../../../components/AnimatedBackground'
 
 function Header({ id }) {
     return (
-        <HeaderWrapper className="gradient-bg" id={id}>
-            <Container>
-                <HeaderCard>
-                    <FullName>Roman Dranchuk</FullName>
-                    <Position>Frontend developer</Position>
-                </HeaderCard>
-            </Container>
-        </HeaderWrapper>
+        <AnimatedBackground>
+            <HeaderWrapper id={id}>
+                <Container>
+                    <HeaderCard>
+                        <FullName>Roman Dranchuk</FullName>
+                        <Position>Frontend developer</Position>
+                    </HeaderCard>
+                </Container>
+            </HeaderWrapper >
+        </AnimatedBackground>
     )
 }
 

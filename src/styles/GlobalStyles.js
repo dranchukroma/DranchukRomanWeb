@@ -40,6 +40,6 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   .gradient-bg {
-    animation: ${changingBgColor} 20s infinite;
+    /* animation: ${changingBgColor} 40s infinite; */
   }
 `;

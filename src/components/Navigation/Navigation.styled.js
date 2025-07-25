@@ -3,11 +3,11 @@ import { theme } from "../../styles/theme";
 
 export const NavWrapper = styled.nav`
     width: 100%;
-    padding: 11px 0;
     position: fixed;
     z-index: 1000;
 
     > :first-child {
+        padding: 11px 0;
         display: flex;
         align-items: center;
         justify-content: space-between;
