@@ -1,24 +1,43 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Container from "../../../../components/Container";
 import SectionHeading from "../../../../components/SectionHeader";
 import { projectList } from "./projectList.js";
-import { ContentWrapper, Card, Circle, CardPreview, CardImg, CardInfoWrapper, CardInfoContainer, ProjectDescription, ProjectName, ProjectWrapper } from "./Projects.styled.js";
+import { ContentWrapper, Card, Circle, CardPreview, CardImg, CardInfoWrapper, CardInfoContainer, ProjectDescription, ProjectName, ProjectWrapper, CircleDescription } from "./Projects.styled.js";
 import ArrowCTA from "../../../../components/icons/ArrowCTA/index.jsx";
 
 function Projects({ id }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
-    const [activeCard, setActiveCard] = useState(null);
+    const [activeRing, setActiveRing] = useState(false);
+    const [hoverCardPreview, setHoverCardPreview] = useState(false);
 
-    const handleMouseMove = (e) => {
-        const rect = e.currentTarget.getBoundingClientRect();
-        setPosition({
-            x: e.clientX - rect.left,
-            y: e.clientY - rect.top,
-        });
-    };
+    useEffect(() => {
+        const handleMouseMove = (e) => {
+            setPosition({ x: e.clientX, y: e.clientY });
+        };
+
+        window.addEventListener('mousemove', handleMouseMove);
+        return () => window.removeEventListener('mousemove', handleMouseMove);
+    }, []);
 
     return (
-        <ProjectWrapper id={id}>
+        <ProjectWrapper id={id}
+            onMouseLeave={() => setActiveRing(false)}
+            onMouseEnter={() => setActiveRing(true)}
+        >
+            <Circle
+                active={hoverCardPreview}
+                opacity={activeRing ? 1 : 0}
+                style={{
+                    top: position.y,
+                    left: position.x,
+                }}
+            >
+                <CircleDescription
+                    active={hoverCardPreview}
+                >
+                    Click to see more
+                </CircleDescription>
+            </Circle>
             <Container>
                 <SectionHeading heading={'Projects'} />
                 <ContentWrapper>
@@ -29,9 +48,14 @@ function Projects({ id }) {
                         >
                             <CardPreview
                                 className="gradient-bg"
-                                onMouseMove={handleMouseMove}
-                                onMouseLeave={() => setActiveCard(null)}
-                                onMouseEnter={() => setActiveCard(index)}
+                                onMouseLeave={() => {
+                                    console.log('New state: ', false);
+                                    setHoverCardPreview(false);
+                                }}
+                                onMouseEnter={() => {
+                                    console.log('New state: ', true);
+                                    setHoverCardPreview(true);
+                                }}
                             >
                                 {[
                                     project.images?.mobileImage,
@@ -39,13 +63,6 @@ function Projects({ id }) {
                                     project.images?.tabletImage,
                                 ].filter(Boolean).map((imageUrl, idx) => (
                                     <div>
-                                        <Circle
-                                            opacity={activeCard === index ? 1 : 0}
-                                            style={{
-                                                top: position.y,
-                                                left: position.x,
-                                            }}
-                                        />
                                         <CardImg src={imageUrl} key={idx} />
                                     </div>
                                 ))}

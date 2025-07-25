@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
 
 export const ProjectWrapper = styled.div`
+    position: relative;
 `
 
 export const ContentWrapper = styled.div`
-    position: relative;
     padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -86,14 +86,31 @@ export const ProjectDescription = styled.p`
 `
 
 export const Circle = styled.div`
-  position: absolute;
-  width: 40px;
-  height: 40px;
+  position: fixed;
+  width: ${({ active }) => (active ? 140 : 40)}px;
+  height: ${({ active }) => (active ? 140 : 40)}px;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  pointer-events: none;
+  pointer-events: none; 
+  cursor: ${({ active }) => (active ? 'pointer' : 'none')};
   transform: translate(-50%, -50%);
-  transition: opacity 0.2s ease;
+  transition: opacity 0.3s ease, width 0.3s ease, height 0.3s ease, backdrop-filter 0.3s ease;
   opacity: ${({ opacity }) => (opacity)};
   z-index: 10;
-`;
+  backdrop-filter: ${({ active }) => (active ? 'blur(3px) invert(1)' : 'none')};
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+`
+
+export const CircleDescription = styled.p`
+    height: ${({ active }) => (active ? 30 : 0)}px;
+    opacity: ${({ active }) => (active ? 1 : 0)};
+    color: ${theme.colors.white};
+    font-family: ${theme.fontFamily.main};
+    overflow: hidden;
+    white-space: nowrap;
+    transition: height 0.3s ease, opacity 0.3s ease;
+`
