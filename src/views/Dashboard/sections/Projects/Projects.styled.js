@@ -2,10 +2,10 @@ import styled from "styled-components";
 import { theme } from "../../../../styles/theme";
 
 export const ProjectWrapper = styled.div`
-
 `
 
 export const ContentWrapper = styled.div`
+    position: relative;
     padding-top: 50px;
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +38,7 @@ export const Card = styled.div`
     }
 `
 export const CardPreview = styled.div`
+    position: relative;
     padding: 20px;
     border-radius: 20px;
     display: flex;
@@ -83,3 +84,16 @@ export const ProjectName = styled.h3`
 export const ProjectDescription = styled.p`
 
 `
+
+export const Circle = styled.div`
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.2s ease;
+  opacity: ${({ opacity }) => (opacity)};
+  z-index: 10;
+`;
