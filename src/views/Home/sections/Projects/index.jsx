@@ -12,6 +12,12 @@ function Projects({ id }) {
     const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
 
     useEffect(() => {
+        const handleResize = () => setWindowWidth(window.innerWidth > 576);
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    useEffect(() => {
         const handleMouseMove = (e) => {
             setPosition({ x: e.clientX, y: e.clientY });
         };

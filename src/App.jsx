@@ -21,7 +21,7 @@ function App() {
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/project" element={<Projects />}>
+            <Route path="/project/:projectName" element={<Projects />}>
               <Route path="sportApp" element={<SportApp />} />
             </Route>
             <Route path="*" element={<NotFound />} />

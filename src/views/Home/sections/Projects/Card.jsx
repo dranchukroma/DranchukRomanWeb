@@ -2,8 +2,10 @@ import React from "react";
 import { CardsContainer, ProjectPreview, ProjectLabelWrapper, ProjectName, ProjectDescription } from "./Projects.styled";
 import { CardImg } from "./Projects.styled";
 import ArrowCTA from "../../../../components/icons/ArrowCTA";
+import { useNavigate } from "react-router-dom";
 
 function Card({ project, setIsHover }) {
+    const navigate = useNavigate();
     const projectImages = [project.images?.mobileImage, project.images?.desktopImage, project.images?.tabletImage]
 
     return (
@@ -12,6 +14,7 @@ function Card({ project, setIsHover }) {
                 className="gradient-bg"
                 onMouseLeave={() => setIsHover(false)}
                 onMouseEnter={() => setIsHover(true)}
+                onClick={() => navigate(`project/${project.urlName}`)}
             >
                 {projectImages.filter(Boolean).map((url, i) => <CardImg src={url} key={i} />)}
             </ProjectPreview>
@@ -24,7 +27,7 @@ function Card({ project, setIsHover }) {
                         {project.description || null}
                     </ProjectDescription>
                 </div>
-                <ArrowCTA />
+                <ArrowCTA onClick={() => navigate(`project/${project.urlName}`)} />
             </ProjectLabelWrapper>
         </CardsContainer>
     )
