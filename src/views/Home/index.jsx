@@ -5,7 +5,7 @@ import Projects from "./sections/Projects"
 import Contact from "./sections/Contact";
 
 
-function Dashboard() {
+function Home() {
     return (
         <div>
             <Header id="Header" />
@@ -16,4 +16,4 @@ function Dashboard() {
     )
 }
 
-export default Dashboard;
+export default Home;

@@ -4,7 +4,7 @@ import './styles/reset.css';
 import { ThemeProvider } from "styled-components";
 import { theme } from "./styles/theme";
 import { GlobalStyle } from "./styles/GlobalStyles";
-import Dashboard from "./views/Dashboard";
+import Home from "./views/Home";
 import Projects from "./views/Projects"
 import NotFound from "./views/NotFound"
 import SportApp from "./views/Projects/SportApp";
@@ -20,7 +20,7 @@ function App() {
         <BrowserRouter>
           <Navigation />
           <Routes>
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Home />} />
             <Route path="/project" element={<Projects />}>
               <Route path="sportApp" element={<SportApp />} />
             </Route>

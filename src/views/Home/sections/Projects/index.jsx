@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import Container from "../../../../components/Container";
-import SectionHeading from "../../../../components/SectionHeader";
+import Container from "../../../../components/Container/index.jsx";
+import SectionHeading from "../../../../components/SectionHeader/index.jsx";
 import { projectList } from "./projectList.js";
 import { CardsWrapper, MouseFocurCircle, ProjectWrapper, MouseFocurLabel } from "./Projects.styled.js";
 import Card from "./Card.jsx";
