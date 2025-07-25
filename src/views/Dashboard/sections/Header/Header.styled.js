@@ -4,6 +4,7 @@ import { theme } from '../../../../styles/theme';
 export const HeaderWrapper = styled.header`
     width: 100%;
     height: 100vh;
+    
     display: flex;
     align-items: center;
     justify-content: left;
@@ -17,11 +18,12 @@ export const HeaderWrapper = styled.header`
 `
 
 export const HeaderCard = styled.div`
-    border-radius: 30px;
-    background-color: ${theme.colors.lightWhite}80;
-    margin-top: -100px;
     width: max-content;
+    margin-top: -100px;
     padding: 40px;
+    border-radius: 30px;
+
+    background-color: ${theme.colors.lightWhite}80;
 
     p, h1 {
         font-weight: ${theme.fontWeight.semiBold}
