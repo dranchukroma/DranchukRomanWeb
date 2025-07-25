@@ -16,8 +16,8 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <ScrollProvider>
-        <BrowserRouter>
+      <BrowserRouter>
+        <ScrollProvider>
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />
@@ -27,9 +27,9 @@ function App() {
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
-        </BrowserRouter>
-      </ScrollProvider>
-    </ThemeProvider>
+        </ScrollProvider>
+      </BrowserRouter>
+    </ThemeProvider >
   );
 }
 

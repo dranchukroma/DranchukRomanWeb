@@ -14,7 +14,7 @@ function Contact({ id }) {
                         <Position>Frontend developer</Position>
                     </InfoWrapper>
                     <LinkWrapper>
-                        <ContactLink className="gradient-bg" href={'adf'}>
+                        <ContactLink className="gradient-bg" href={'mailto:dranchuk.roma@gmail.com'}>
                             Contact me
                         </ContactLink>
                     </LinkWrapper>

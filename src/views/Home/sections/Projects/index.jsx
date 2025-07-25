@@ -9,6 +9,7 @@ function Projects({ id }) {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [activeRing, setActiveRing] = useState(false);
     const [hoverCardPreview, setHoverCardPreview] = useState(false);
+    const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
 
     useEffect(() => {
         const handleMouseMove = (e) => {
@@ -25,14 +26,14 @@ function Projects({ id }) {
             onMouseLeave={() => setActiveRing(false)}
             onMouseEnter={() => setActiveRing(true)}
         >
-            <MouseFocurCircle
+            {isDesktop ? <MouseFocurCircle
                 focus={hoverCardPreview}
                 opacity={activeRing ? 1 : 0}
                 top={position.y}
                 left={position.x}
             >
                 <MouseFocurLabel focus={hoverCardPreview}>Click to see more</MouseFocurLabel>
-            </MouseFocurCircle>
+            </MouseFocurCircle> : null}
             <Container>
                 <SectionHeading heading={'Projects'} />
                 <CardsWrapper>

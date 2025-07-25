@@ -1,10 +1,25 @@
 import React, { useState, useContext, useEffect, createContext, useMemo } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const ScrollContext = createContext(null);
 
 export function ScrollProvider({ children }) {
     const sectionIds = useMemo(() => ["Header", "About", "Projects", "Contact"], []);
     const [activeSection, setActiveSection] = useState(sectionIds[0]);
+
+    const location = useLocation();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        if (location.hash) {
+            const id = location.hash.replace('#', '');
+            // Трохи затримка, щоб дочекався DOM
+            setTimeout(() => {
+                scrollTo(id);
+            }, 0);
+        }
+    }, [location.hash]);
+
 
     useEffect(() => {
         const getActiveSection = () => {

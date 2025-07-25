@@ -23,6 +23,13 @@ const changingBgColor = keyframes`
 `;
 
 export const GlobalStyle = createGlobalStyle`
+  html, body, #root {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
   html {
     scroll-behavior: smooth;
     scroll-margin-top: 100px;

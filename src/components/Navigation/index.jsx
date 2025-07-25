@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
     NavWrapper,
     DesktopNavWrapper,
@@ -15,10 +16,15 @@ import Container from '../Container';
 import { useScroll } from "../../context/ScrollContext";
 
 function Navigation() {
+    const navigate = useNavigate();
     const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
     const [mobileNavStatus, setMobileNav] = useState(false);
 
     const { sectionIds, activeSection, scrollTo } = useScroll();
+
+    const handleClick = (id) => {
+        navigate(`/#${id}`);
+    };
 
     useEffect(() => {
         const handleResize = () => setWindowWidth(window.innerWidth > 576);
@@ -32,7 +38,7 @@ function Navigation() {
                 <EntryPoints
                     key={sectionId}
                     active={activeSection === sectionId}
-                    onClick={() => scrollTo(sectionId)}
+                    onClick={() => handleClick(sectionId)}
                 >
                     {sectionId}
                 </EntryPoints>
