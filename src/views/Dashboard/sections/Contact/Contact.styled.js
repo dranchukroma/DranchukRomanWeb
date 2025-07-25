@@ -1,12 +1,11 @@
 import styled from "styled-components"
 import { theme } from "../../../../styles/theme"
 
-export const ContactWrapper = styled.div`
-
-`
+export const ContactWrapper = styled.div``
 
 export const ContentWrapper = styled.div`
     padding: 50px 0;
+    
     display: flex;
     justify-content: space-between;
     gap: 20px;
@@ -60,16 +59,20 @@ export const LinkWrapper = styled.p`
     }
 `
 export const ContactLink = styled.a`
+    height: 100%;
+    border-radius: 20px;
+
+    font-size: 25px;
+    font-weight: ${theme.fontWeight.semiBold};
+
+    color: black;
+    text-decoration: none;
+
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
-    text-decoration: none;
-    color: black;
-    font-size: 25px;
-    font-weight: ${theme.fontWeight.semiBold};
+
     cursor: pointer;
-    border-radius: 20px;
 
     @media (max-width: ${theme.breakpoints.tablet}) {
         height: 100px;
