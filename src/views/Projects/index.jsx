@@ -6,6 +6,8 @@ import Container from "../../components/Container";
 function Projects() {
     const { projectName } = useParams();
 
+    console.log(projectName);
+
     return (
         <Container>
             <Outlet />

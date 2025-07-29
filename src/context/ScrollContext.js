@@ -1,5 +1,5 @@
 import React, { useState, useContext, useEffect, createContext, useMemo } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const ScrollContext = createContext(null);
 
@@ -8,7 +8,6 @@ export function ScrollProvider({ children }) {
     const [activeSection, setActiveSection] = useState(sectionIds[0]);
 
     const location = useLocation();
-    const navigate = useNavigate();
 
     useEffect(() => {
         if (location.hash) {

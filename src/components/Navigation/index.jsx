@@ -21,7 +21,7 @@ function Navigation() {
     const [isDesktop, setWindowWidth] = useState(window.innerWidth > 576);
     const [mobileNavStatus, setMobileNav] = useState(false);
 
-    const { sectionIds, activeSection, scrollTo } = useScroll();
+    const { sectionIds, activeSection } = useScroll();
 
     const handleClick = (id) => {
         navigate(`/#${id}`);
